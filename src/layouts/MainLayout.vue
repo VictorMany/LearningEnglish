@@ -1,0 +1,142 @@
+<template>
+  <q-layout view="lHh Lpr lFf">
+    <q-header elevated style="height: 80px">
+      <q-toolbar>
+        <q-btn
+          style="width: 100px"
+          flat
+          dense
+          round
+          aria-label="Menu"
+          @click="leftDrawerOpen = !leftDrawerOpen"
+        >
+          <q-icon size="80px" name="menu"> </q-icon
+        ></q-btn>
+
+        <q-toolbar-title class="text-white">
+          <strong>LEARNING ENGLISH</strong>
+          <p
+            style="
+              font-size: 0.8rem;
+              margin-bottom: -0.1rem;
+              color: #027;
+              font-weight: bold;
+            "
+            class="row"
+          >
+            (Aprendiendo inglés)
+          </p>
+        </q-toolbar-title>
+      </q-toolbar>
+    </q-header>
+
+    <q-drawer
+      class="bg-dark"
+      v-model="leftDrawerOpen"
+      show-if-above
+      bordered
+      content-class="bg-blue-1 text-white"
+    >
+      <q-list>
+        <q-item-label header class="text-grey-8" style="font-weight: bold">
+           QUESTIONS AREA
+          <p
+            style="
+              margin-top: 0.5rem;
+              margin-bottom: -1rem;
+              font-size: 0.7rem;
+              font-weight: normal;
+            "
+          >
+            Área de preguntas
+          </p>
+        </q-item-label>
+        <EssentialLink
+          v-for="link in essentialLinks"
+          :key="link.title"
+          v-bind="link"
+        />
+      </q-list>
+    </q-drawer>
+
+    <q-page-container>
+      <router-view />
+    </q-page-container>
+  </q-layout>
+</template>
+
+<script lang="ts">
+import EssentialLink from "components/EssentialLink.vue";
+
+const linksData = [
+  {
+    title: "Numbers",
+    caption: "Numeros",
+    icon: "record_voice_over",
+    color: "red",
+    questionDialog: "numbers",
+  },
+  {
+    title: "Colors",
+    caption: "colors",
+    icon: "rss_feed",
+    color: "cyan",
+    questionDialog: "colors",
+  },
+  {
+    title: "Body parts",
+    caption: "Partes del cuerpo",
+    icon: "public",
+    color: "yellow-10",
+    questionDialog: "body",
+  },
+  {
+    title: "Alphabet",
+    caption: "Abecedario",
+    icon: "favorite",
+    color: "blue-14",
+    questionDialog: "alphabet",
+  },
+  {
+    title: "Phrases",
+    caption: "Frases",
+    icon: "favorite",
+    color: "blue",
+    questionDialog: "phrases",
+  },
+  {
+    title: "Verbs",
+    caption: "Verbos",
+    icon: "favorite",
+    color: "green-14",
+    questionDialog: "verbs",
+  },
+  {
+    title: "Pronouns",
+    caption: "Pronombres",
+    icon: "favorite",
+    color: "orange-10",
+    questionDialog: "pronouns",
+  },
+  {
+    title: "Fruits",
+    caption: "Frutas",
+    icon: "favorite",
+    color: "purple",
+    questionDialog: "fruits",
+  },
+];
+
+import { defineComponent, ref } from "@vue/composition-api";
+
+export default defineComponent({
+  name: "MainLayout",
+  components: { EssentialLink },
+  setup() {
+    const leftDrawerOpen = ref(false);
+    const essentialLinks = ref(linksData);
+
+    return { leftDrawerOpen, essentialLinks };
+  },
+});
+</script>
