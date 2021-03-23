@@ -1,4 +1,4 @@
-# Mac_example (mac_example)
+# Lesran English offline (android)
 
 A Quasar Framework app
 
