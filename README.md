@@ -1,4 +1,4 @@
-# Lesran English offline (android)
+# Learn English offline (android)
 
 A Quasar Framework app
 
