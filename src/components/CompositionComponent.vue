@@ -162,16 +162,11 @@
       transition-show="rotate"
       transition-hide="rotate"
     >
-      <q-card style="width: 100%">
-        <q-card-section
-          class="bg-blue-10 text-white"
-          style="border-radius: 0.5rem; margin: 1rem"
-        >
-          <div class="text-h6">Alphabet</div>
-          <p style="font-size: 1rem; color: grey">(Abecedario)</p>
-        </q-card-section>
+      <q-card
+        style="width: 100%; background-color: rgb(10, 10, 10, 0.8); overflow: scroll"
+      >
         <q-card-section class="q-pt-none">
-          <alphabet-component />
+          <alphabet-component/>
         </q-card-section>
 
         <q-card-actions>
@@ -360,38 +355,15 @@
 </template>
 
 <script lang="ts">
-import {
-  defineComponent,
-  PropType,
-  computed,
-  ref,
-  toRef,
-  Ref
-} from "@vue/composition-api";
-import ActionsAndVerbsComponent from "./ActionsAndVerbsComponent.vue";
-import AlphabetComponent from "./AlphabetComponent.vue";
-import FruitsComponent from "./FruitsComponent.vue";
-import BasicPhrasesComponent from "./BasicPhrasesComponent.vue";
-import BodyPartsComponent from "./BodyPartsComponent.vue";
-import NumbersComponent from "./NumbersComponent.vue";
-import { Todo, Meta } from "./models";
-import ColorsComponentQuestions from "./ColorsComponentQuestions.vue";
-import ColorsComponent from "./ColorsComponent.vue";
-
-function useClickCount() {
-  const clickCount = ref(0);
-  function increment() {
-    clickCount.value += 1;
-    return clickCount.value;
-  }
-
-  return { clickCount, increment };
-}
-
-function useDisplayTodo(todos: Ref<Todo[]>) {
-  const todoCount = computed(() => todos.value.length);
-  return { todoCount };
-}
+import { defineComponent } from "@vue/composition-api";
+import ActionsAndVerbsComponent from "./actionsComponent/ActionsAndVerbsComponent.vue";
+import AlphabetComponent from "./alphabetComponent/AlphabetComponent.vue";
+import FruitsComponent from "./fruitsComponent/FruitsComponent.vue";
+import BasicPhrasesComponent from "./phrasesComponent/BasicPhrasesComponent.vue";
+import BodyPartsComponent from "./bodyComponent/BodyPartsComponent.vue";
+import NumbersComponent from "./numbersComponent/NumbersComponent.vue";
+import ColorsComponentQuestions from "./colorsComponent/ColorsComponentQuestions.vue";
+import ColorsComponent from "./colorsComponent/ColorsComponent.vue";
 
 export default defineComponent({
   components: {
@@ -410,14 +382,7 @@ export default defineComponent({
       type: String,
       required: true
     },
-    todos: {
-      type: (Array as unknown) as PropType<Todo[]>,
-      default: () => []
-    },
-    meta: {
-      type: (Object as unknown) as PropType<Meta>,
-      required: true
-    },
+
     active: {
       type: Boolean
     }
@@ -448,9 +413,6 @@ export default defineComponent({
         opacity: 0.2
       }
     };
-  },
-  setup(props) {
-    return { ...useClickCount(), ...useDisplayTodo(toRef(props, "todos")) };
   },
 
   methods: {}

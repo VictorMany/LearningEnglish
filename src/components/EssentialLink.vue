@@ -34,51 +34,62 @@
     >
       <colors-component-questions></colors-component-questions>
     </q-dialog>
+
+    <q-dialog
+      v-model="alphabet"
+      transition-show="rotate"
+      transition-hide="rotate"
+    >
+      <alphabet-component-questions></alphabet-component-questions>
+    </q-dialog>
   </div>
 </template>
 
 <script>
 import { defineComponent } from "@vue/composition-api";
-import NumbersComponentQuestions from "./NumbersComponentQuestions.vue";
-import ColorsComponentQuestions from "./ColorsComponentQuestions.vue";
+import NumbersComponentQuestions from "./numbersComponent/NumbersComponentQuestions.vue";
+import ColorsComponentQuestions from "./colorsComponent/ColorsComponentQuestions.vue";
+import AlphabetComponentQuestions from "./alphabetComponent/AlphabetComponentQuestions";
 
 export default defineComponent({
   name: "EssentialLink",
   components: {
     NumbersComponentQuestions,
     ColorsComponentQuestions,
+    AlphabetComponentQuestions
   },
   props: {
     title: {
       type: String,
-      required: true,
+      required: true
     },
 
     caption: {
       type: String,
-      default: "",
+      default: ""
     },
 
     color: {
       type: String,
-      default: "#",
+      default: "#"
     },
 
     icon: {
       type: String,
-      default: "",
+      default: ""
     },
 
     questionDialog: {
       type: String,
-      default: "",
-    },
+      default: ""
+    }
   },
 
   data() {
     return {
       numbers: false,
       colors: false,
+      alphabet: false
     };
   },
   methods: {
@@ -91,17 +102,18 @@ export default defineComponent({
         case "colors":
           this.colors = true;
           break;
+        case "alphabet":
+          this.alphabet = true;
+          break;
       }
     },
     crearAudio(sound) {
       var number = document.getElementById(sound);
       number.play();
-    },
-  },
+    }
+  }
 });
 </script>
-
-
 
 <style lang="sass" scoped>
 .button
@@ -123,5 +135,4 @@ export default defineComponent({
 
 h6
   margin-top: -0.5rem
-
 </style>

@@ -245,7 +245,6 @@ export default {
 
     cargarAudiosColorsAleatorio() {
       let number = Math.floor(Math.random() * (9 - 0) + 0);
-
       this.arregloColors.map(x => {
         if (x.number == number) {
           this.crearAudio(x);
