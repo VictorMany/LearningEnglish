@@ -1,7 +1,12 @@
 <template>
   <div
     class="q-pa-md"
-    style="width: 100%; height: 90%; background-color: rgb(10, 10, 10, 0.8); overflow: scroll"
+    style="
+      width: 100%;
+      height: 90%;
+      background-color: rgb(10, 10, 10, 0.8);
+      overflow: scroll;
+    "
   >
     <h4
       style="
@@ -144,6 +149,15 @@
         :textoIngles="textoIngles"
       ></card-img-color>
     </div>
+
+    <q-btn
+      push
+      style="height: 40px; width: 100%; margin-top: 1rem"
+      label="CLOSE"
+      color="red-10"
+      v-close-popup
+      ><p style="font-size: 0.5rem; margin-left: 0.5rem">(Cerrar)</p></q-btn
+    >
   </div>
 </template>
 
@@ -174,7 +188,7 @@ export default {
           color: "red-13",
           textoEspaniol: "La flor es roja",
           audio: "Red",
-          textoIngles: "The flower is RED"
+          textoIngles: "The flower is RED",
         },
         {
           id: 2,
@@ -182,7 +196,7 @@ export default {
           color: "yellow-13",
           textoEspaniol: "El sol es amarillo",
           audio: "Yellow",
-          textoIngles: "The sun is YELLOW"
+          textoIngles: "The sun is YELLOW",
         },
         {
           id: 3,
@@ -190,7 +204,7 @@ export default {
           color: "blue-13",
           textoEspaniol: "El cielo es azul",
           audio: "Blue",
-          textoIngles: "The sky is BLUE"
+          textoIngles: "The sky is BLUE",
         },
         {
           id: 4,
@@ -198,7 +212,7 @@ export default {
           color: "green-13",
           textoEspaniol: "El pasto es verde",
           audio: "Green",
-          textoIngles: "The grass is GREEN"
+          textoIngles: "The grass is GREEN",
         },
         {
           id: 5,
@@ -206,7 +220,7 @@ export default {
           color: "orange",
           textoEspaniol: "La fruta es anaranjada",
           audio: "Orange",
-          textoIngles: "The fruit is ORANGE"
+          textoIngles: "The fruit is ORANGE",
         },
         {
           id: 6,
@@ -214,7 +228,7 @@ export default {
           color: "purple",
           textoEspaniol: "El Minion es morado",
           audio: "Purple",
-          textoIngles: "The Minion is PURPLE"
+          textoIngles: "The Minion is PURPLE",
         },
         {
           id: 7,
@@ -222,7 +236,7 @@ export default {
           color: "grey",
           textoEspaniol: "El gato es gris",
           audio: "Grey",
-          textoIngles: "The cat is GREY"
+          textoIngles: "The cat is GREY",
         },
         {
           id: 8,
@@ -230,7 +244,7 @@ export default {
           color: "pink",
           textoEspaniol: "La flor es rosa",
           audio: "Pink",
-          textoIngles: "The flower is PINK"
+          textoIngles: "The flower is PINK",
         },
         {
           id: 9,
@@ -238,8 +252,8 @@ export default {
           color: "white",
           textoEspaniol: "La nube es blanca",
           audio: "White",
-          textoIngles: "The cloud is white"
-        }
+          textoIngles: "The cloud is white",
+        },
       ],
       color: "",
       imagen: "",
@@ -248,8 +262,6 @@ export default {
       audio: "",
 
       dense: false,
-
-     
     };
   },
 
@@ -258,7 +270,7 @@ export default {
       var number = document.getElementById(sound);
       number.play();
       console.log(sound);
-      this.arrayImagesColors.map(item => {
+      this.arrayImagesColors.map((item) => {
         if (item.audio.toLowerCase() === sound.toLowerCase()) {
           console.log(item);
           this.color = item.color;
@@ -268,8 +280,8 @@ export default {
           this.audio = item.audio;
         }
       });
-    }
-  }
+    },
+  },
 };
 
 //etiquetaAudio.play();

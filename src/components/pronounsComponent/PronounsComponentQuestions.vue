@@ -3,10 +3,10 @@
     class="q-pa-md"
     style="width: 100%; height: 90%; background-color: rgb(10, 10, 10, 0.8)"
   >
-    <h4
+    <h6
       style="
         margin-top: -0.3rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         width: 100%;
         padding: 0.4rem;
         border-radius: 0.5rem;
@@ -15,28 +15,32 @@
       "
       class="bg-blue-13 text-white"
     >
-      Colors
-    </h4>
-    <div class="row justify-around" style="margin-bottom: 1rem">
-      <audio id="red"><source src="colors/red.mp3" /></audio>
-      <audio id="blue"><source src="colors/blue.mp3" /></audio>
-      <audio id="yellow"><source src="colors/yellow.mp3" /></audio>
-      <audio id="green"><source src="colors/green.mp3" /></audio>
-      <audio id="orange"><source src="colors/orange.mp3" /></audio>
-      <audio id="purple"><source src="colors/purple.mp3" /></audio>
-      <audio id="grey"><source src="colors/grey.mp3" /></audio>
-      <audio id="pink"><source src="colors/pink.mp3" /></audio>
-      <audio id="white"><source src="colors/white.mp3" /></audio>
+      Personal pronouns
+    </h6>
+
+    <!--  DIV DE LOS AUDIOS-->
+    <div>
+      <audio id="i"><source src="pronouns/i.mp3" /></audio>
+      <audio id="you"><source src="pronouns/you.mp3" /></audio>
+      <audio id="they"><source src="pronouns/they.mp3" /></audio>
+      <audio id="we"><source src="pronouns/we.mp3" /></audio>
+      <audio id="she"><source src="pronouns/she.mp3" /></audio>
+      <audio id="he"><source src="pronouns/he.mp3" /></audio>
+      <audio id="it"><source src="pronouns/it.mp3" /></audio>
+
       <audio id="correct"><source src="numbers/sounds/correct.mp3" /></audio>
       <audio id="incorrect">
         <source src="numbers/sounds/incorrect.mp3" />
       </audio>
+    </div>
+    <!--  DIV DE LOS AUDIOS-->
 
+    <div class="row justify-center content-center" style="width: 100%">
       <q-btn
         style="width: 100%; height: auto"
         push
         class="q-btn"
-        @click="cargarAudiosColorsAleatorio"
+        @click="cargarAudiosPronounsAleatorio"
         color="light-blue-13"
         icon="campaign"
       >
@@ -45,104 +49,77 @@
           Presioname
         </p>
       </q-btn>
-    </div>
-
-    <div>
-      <div class="row">
-        <div
-          class="col bg-blue-13"
-          style="
-            width: 90%;
-            height: 80px;
-            border-radius: 0.5rem;
-            margin: 0.5rem;
-          "
-          @click="comprobar('blue')"
-        />
-        <div
-          class="col bg-white"
-          style="
-            width: 90%;
-            height: 80px;
-            border-radius: 0.5rem;
-            margin: 0.5rem;
-          "
-          @click="comprobar('white')"
-        />
-        <div
-          class="col bg-red-13"
-          style="
-            width: 90%;
-            height: 80px;
-            border-radius: 0.5rem;
-            margin: 0.5rem;
-          "
-          @click="comprobar('red')"
-        />
+      <div
+        class="col-5 bg-yellow-10 row justify-center content-center"
+        style="height: 80px; border-radius: 0.5rem; margin: 0.5rem"
+        @click="comprobar('i')"
+      >
+        <q-item-label class="text-white self-center text-bold text-h6"
+          >Yo</q-item-label
+        >
       </div>
-      <div class="row">
-        <div
-          class="col bg-purple"
-          style="
-            width: 90%;
-            height: 80px;
-            border-radius: 0.5rem;
-            margin: 0.5rem;
-          "
-          @click="comprobar('purple')"
-        />
-        <div
-          class="col bg-green-14"
-          style="
-            width: 90%;
-            height: 80px;
-            border-radius: 0.5rem;
-            margin: 0.5rem;
-          "
-          @click="comprobar('green')"
-        />
-        <div
-          class="col bg-orange-10"
-          style="
-            width: 90%;
-            height: 80px;
-            border-radius: 0.5rem;
-            margin: 0.5rem;
-          "
-          @click="comprobar('orange')"
-        />
+      <div
+        class="col-5 bg-yellow-10 row justify-center content-center"
+        style="height: 80px; border-radius: 0.5rem; margin: 0.5rem"
+        @click="comprobar('you')"
+      >
+        <q-item-label
+          class="text-white self-center text-bold text-h6"
+          style="overflow: scroll; padding: 0.56rem"
+          >Tú/Ustedes</q-item-label
+        >
       </div>
-      <div class="row">
-        <div
-          class="col bg-yellow-13"
-          style="
-            width: 90%;
-            height: 80px;
-            border-radius: 0.5rem;
-            margin: 0.5rem;
-          "
-          @click="comprobar('yellow')"
-        />
-        <div
-          class="col bg-pink"
-          style="
-            width: 90%;
-            height: 80px;
-            border-radius: 0.5rem;
-            margin: 0.5rem;
-          "
-          @click="comprobar('pink')"
-        />
-        <div
-          class="col bg-grey-7"
-          style="
-            width: 90%;
-            height: 80px;
-            border-radius: 0.5rem;
-            margin: 0.5rem;
-          "
-          @click="comprobar('grey')"
-        />
+      <div
+        class="col-5 bg-yellow-10 row justify-center content-center"
+        style="height: 80px; border-radius: 0.5rem; margin: 0.5rem"
+        @click="comprobar('they')"
+      >
+        <q-item-label class="text-white self-center text-bold text-h6"
+          >Ellos</q-item-label
+        >
+      </div>
+      <div
+        class="col-5 bg-yellow-10 row justify-center content-center"
+        style="height: 80px; border-radius: 0.5rem; margin: 0.5rem"
+        @click="comprobar('we')"
+      >
+        <q-item-label class="text-white self-center text-bold text-h6"
+          >Nosotros</q-item-label
+        >
+      </div>
+      <div
+        class="col-5 bg-yellow-10 row justify-center content-center"
+        style="height: 80px; border-radius: 0.5rem; margin: 0.5rem"
+        @click="comprobar('she')"
+      >
+        <q-item-label class="text-white self-center text-bold text-h6"
+          >Ella</q-item-label
+        >
+      </div>
+      <div
+        class="col-5 bg-yellow-10 row justify-center content-center"
+        style="height: 80px; border-radius: 0.5rem; margin: 0.5rem"
+        @click="comprobar('he')"
+      >
+        <q-item-label class="text-white self-center text-bold text-h6"
+          >Él</q-item-label
+        >
+      </div>
+      <div
+        class="bg-yellow-10 row justify-center content-center"
+        style="
+          height: 80px;
+          width: 100%;
+          border-radius: 0.5rem;
+          margin-right: 1.1rem;
+          margin-left: 1.1rem;
+          margin-top: 0.5rem;
+        "
+        @click="comprobar('it')"
+      >
+        <q-item-label class="text-white self-center text-bold text-h6"
+          >Esto</q-item-label
+        >
       </div>
     </div>
 
@@ -190,7 +167,7 @@
           </p>
         </div>
         <div
-          class="bg-red-13 col text-center"
+          class="bg-negative col text-center"
           style="
             padding: 0.5rem;
             border-radius: 0.5rem;
@@ -215,7 +192,7 @@
               border-radius: 0.5rem;
             "
           >
-            Si obtienes un rojo es que deberías de estudiar más los colores
+            Si obtienes un rojo es que deberías de estudiar más los pronombres
           </p>
         </div>
       </div>
@@ -244,16 +221,14 @@ export default {
 
       dense: false,
 
-      arregloColors: [
-        { number: 0, ruta: "red" },
-        { number: 1, ruta: "blue" },
-        { number: 2, ruta: "yellow" },
-        { number: 3, ruta: "green" },
-        { number: 4, ruta: "orange" },
-        { number: 5, ruta: "purple" },
-        { number: 6, ruta: "grey" },
-        { number: 7, ruta: "pink" },
-        { number: 8, ruta: "white" },
+      arregloPronouns: [
+        { number: 0, ruta: "i" },
+        { number: 1, ruta: "you" },
+        { number: 2, ruta: "they" },
+        { number: 3, ruta: "we" },
+        { number: 4, ruta: "he" },
+        { number: 5, ruta: "she" },
+        { number: 6, ruta: "it" },
       ],
 
       currentObject: {},
@@ -261,17 +236,17 @@ export default {
   },
 
   methods: {
-    crearAudio(sound) {
+    async cargarAudio(sound) {
       console.log(sound.ruta, sound.number);
       var number = document.getElementById(sound.ruta);
-      number.play();
+      await number.play();
     },
 
-    cargarAudiosColorsAleatorio() {
-      let number = Math.floor(Math.random() * (9 - 0) + 0);
-      this.arregloColors.map((x) => {
+    cargarAudiosPronounsAleatorio() {
+      let number = Math.floor(Math.random() * (8 - 0) + 0);
+      this.arregloPronouns.map((x) => {
         if (x.number == number) {
-          this.crearAudio(x);
+          this.cargarAudio(x);
           this.currentObject = { ...x };
         }
       });
@@ -279,7 +254,6 @@ export default {
 
     async comprobar(text) {
       try {
-        console.log("Hoola");
         console.log("Numero del input", text);
         console.log("Numero dicho de voz", this.currentObject.number);
 
@@ -306,7 +280,7 @@ export default {
 
     repeat() {
       try {
-        this.crearAudio(this.currentObject);
+        this.cargarAudio(this.currentObject);
       } catch (error) {}
     },
   },

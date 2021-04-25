@@ -42,6 +42,22 @@
     >
       <alphabet-component-questions></alphabet-component-questions>
     </q-dialog>
+
+    <q-dialog
+      v-model="pronouns"
+      transition-show="rotate"
+      transition-hide="rotate"
+    >
+      <pronouns-component-questions></pronouns-component-questions>
+    </q-dialog>
+
+    <q-dialog
+      v-model="phrases"
+      transition-show="rotate"
+      transition-hide="rotate"
+    >
+      <basic-phrases-component-questions></basic-phrases-component-questions>
+    </q-dialog>
   </div>
 </template>
 
@@ -50,46 +66,52 @@ import { defineComponent } from "@vue/composition-api";
 import NumbersComponentQuestions from "./numbersComponent/NumbersComponentQuestions.vue";
 import ColorsComponentQuestions from "./colorsComponent/ColorsComponentQuestions.vue";
 import AlphabetComponentQuestions from "./alphabetComponent/AlphabetComponentQuestions";
+import PronounsComponentQuestions from "./pronounsComponent/PronounsComponentQuestions";
+import BasicPhrasesComponentQuestions from "./phrasesComponent/BasicPhrasesComponentQuestions.vue";
 
 export default defineComponent({
   name: "EssentialLink",
   components: {
     NumbersComponentQuestions,
     ColorsComponentQuestions,
-    AlphabetComponentQuestions
+    AlphabetComponentQuestions,
+    PronounsComponentQuestions,
+    BasicPhrasesComponentQuestions,
   },
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
     },
 
     caption: {
       type: String,
-      default: ""
+      default: "",
     },
 
     color: {
       type: String,
-      default: "#"
+      default: "#",
     },
 
     icon: {
       type: String,
-      default: ""
+      default: "",
     },
 
     questionDialog: {
       type: String,
-      default: ""
-    }
+      default: "",
+    },
   },
 
   data() {
     return {
       numbers: false,
       colors: false,
-      alphabet: false
+      alphabet: false,
+      pronouns: false,
+      phrases: false,
     };
   },
   methods: {
@@ -105,13 +127,15 @@ export default defineComponent({
         case "alphabet":
           this.alphabet = true;
           break;
+        case "pronouns":
+          this.pronouns = true;
+          break;
+        case "phrases":
+          this.phrases = true;
+          break;
       }
     },
-    crearAudio(sound) {
-      var number = document.getElementById(sound);
-      number.play();
-    }
-  }
+  },
 });
 </script>
 

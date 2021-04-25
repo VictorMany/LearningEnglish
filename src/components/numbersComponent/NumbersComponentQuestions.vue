@@ -111,14 +111,22 @@
           "
         >
           <p
-            style="background-color: rgb(0,0,0, 0.3); padding: 0.5rem; border-radius: 0.5rem"
+            style="
+              background-color: rgb(0, 0, 0, 0.3);
+              padding: 0.5rem;
+              border-radius: 0.5rem;
+            "
           >
             Good
           </p>
 
           <p
             class="text-grey-4 text-justify"
-            style="background-color: rgb(0,0,0, 0.3); padding: 0.5rem; border-radius: 0.5rem"
+            style="
+              background-color: rgb(0, 0, 0, 0.3);
+              padding: 0.5rem;
+              border-radius: 0.5rem;
+            "
           >
             Si obtienes un verde es que vas muy bien :)
           </p>
@@ -133,19 +141,35 @@
           "
         >
           <p
-            style="background-color: rgb(0,0,0, 0.3); padding: 0.5rem; border-radius: 0.5rem"
+            style="
+              background-color: rgb(0, 0, 0, 0.3);
+              padding: 0.5rem;
+              border-radius: 0.5rem;
+            "
           >
             Wrong
           </p>
           <p
             class="text-grey-4 text-justify"
-            style="background-color: rgb(0,0,0, 0.3); padding: 0.5rem; border-radius: 0.5rem"
+            style="
+              background-color: rgb(0, 0, 0, 0.3);
+              padding: 0.5rem;
+              border-radius: 0.5rem;
+            "
           >
             Si obtienes un rojo es que deberías de estudiar más los números
           </p>
         </div>
       </div>
     </div>
+
+    <q-btn
+      style="height: 40px; width: 100%; margin-bottom: -13rem"
+      push
+      label="Close"
+      color="red-10"
+      v-close-popup
+    ></q-btn>
   </div>
 </template>
 
@@ -182,10 +206,10 @@ export default {
         { number: 17, ruta: "seventeen" },
         { number: 18, ruta: "eighteen" },
         { number: 19, ruta: "nineteen" },
-        { number: 20, ruta: "twenty" }
+        { number: 20, ruta: "twenty" },
       ],
 
-      currentObject: {}
+      currentObject: {},
     };
   },
 
@@ -199,7 +223,7 @@ export default {
     cargarAudiosAleatorio() {
       let number = Math.floor(Math.random() * (21 - 0) + 0);
 
-      this.arregloAudios.map(x => {
+      this.arregloAudios.map((x) => {
         if (x.number == number) {
           this.crearAudio(x);
           this.currentObject = { ...x };
@@ -218,7 +242,7 @@ export default {
           await number.play();
           this.$q.notify({
             type: "positive",
-            message: `Vas muy bien !!`
+            message: `Vas muy bien !!`,
           });
 
           this.text = "";
@@ -228,7 +252,7 @@ export default {
 
           this.$q.notify({
             type: "negative",
-            message: `Try Again!!`
+            message: `Try Again!!`,
           });
         }
       } catch (error) {}
@@ -236,8 +260,8 @@ export default {
 
     repeat() {
       this.crearAudio(this.currentObject);
-    }
-  }
+    },
+  },
 };
 
 //etiquetaAudio.play();

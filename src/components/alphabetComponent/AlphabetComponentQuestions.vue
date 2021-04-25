@@ -45,14 +45,23 @@
       <audio id="x"><source src="abc/x.mp3" /></audio>
       <audio id="y"><source src="abc/y.mp3" /></audio>
       <audio id="z"><source src="abc/z.mp3" /></audio>
+      <audio id="correct"><source src="numbers/sounds/correct.mp3" /></audio>
+      <audio id="incorrect">
+        <source src="numbers/sounds/incorrect.mp3" />
+      </audio>
     </div>
 
     <div>
       <q-btn
-        style="width: 100%; height: auto; margin-top: -1rem; margin-bottom: 1rem"
+        style="
+          width: 100%;
+          height: auto;
+          margin-top: -1rem;
+          margin-bottom: 1rem;
+        "
         push
         class="q-btn"
-        @click="cargarAudiosAleatorio"
+        @click="cargarAudiosAleatorio()"
         color="light-blue-13"
         icon="campaign"
       >
@@ -63,85 +72,96 @@
       </q-btn>
 
       <div class="row justify-around">
-        <q-btn push class="q-btn" @click="comprobar('A')" color="purple-9"
+        <q-btn push class="q-btn" @click="comprobar('A')" color="pink-9"
           ><div class="row justify-center" style="width: 100%">A</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('B')" color="purple-9"
+        <q-btn push class="q-btn" @click="comprobar('B')" color="pink-9"
           ><div class="row justify-center" style="width: 100%">B</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('C')" color="purple-9"
+        <q-btn push class="q-btn" @click="comprobar('C')" color="pink-9"
           ><div class="row justify-center" style="width: 100%">C</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('D')" color="purple-9"
+        <q-btn push class="q-btn" @click="comprobar('D')" color="pink-9"
           ><div class="row justify-center" style="width: 100%">D</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('E')" color="purple-9"
+        <q-btn push class="q-btn" @click="comprobar('E')" color="pink-9"
           ><div class="row justify-center" style="width: 100%">E</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('F')" color="purple-9"
+        <q-btn push class="q-btn" @click="comprobar('F')" color="pink-9"
           ><div class="row justify-center" style="width: 100%">F</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('G')" color="purple-8"
+        <q-btn push class="q-btn" @click="comprobar('G')" color="pink-8"
           ><div class="row justify-center" style="width: 100%">G</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('H')" color="purple-8"
+        <q-btn push class="q-btn" @click="comprobar('H')" color="pink-8"
           ><div class="row justify-center" style="width: 100%">H</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('I')" color="purple-8"
+        <q-btn push class="q-btn" @click="comprobar('I')" color="pink-8"
           ><div class="row justify-center" style="width: 100%">I</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('J')" color="purple-8"
+        <q-btn push class="q-btn" @click="comprobar('J')" color="pink-8"
           ><div class="row justify-center" style="width: 100%">J</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('K')" color="purple-8"
+        <q-btn push class="q-btn" @click="comprobar('K')" color="pink-8"
           ><div class="row justify-center" style="width: 100%">K</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('L')" color="purple-8"
+        <q-btn push class="q-btn" @click="comprobar('L')" color="pink-8"
           ><div class="row justify-center" style="width: 100%">L</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('M')" color="purple-7"
+        <q-btn push class="q-btn" @click="comprobar('M')" color="pink-7"
           ><div class="row justify-center" style="width: 100%">M</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('N')" color="purple-7"
+        <q-btn push class="q-btn" @click="comprobar('N')" color="pink-7"
           ><div class="row justify-center" style="width: 100%">N</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('O')" color="purple-7"
+        <q-btn push class="q-btn" @click="comprobar('O')" color="pink-7"
           ><div class="row justify-center" style="width: 100%">O</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('P')" color="purple-7"
+        <q-btn push class="q-btn" @click="comprobar('P')" color="pink-7"
           ><div class="row justify-center" style="width: 100%">P</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('Q')" color="purple-7"
+        <q-btn push class="q-btn" @click="comprobar('Q')" color="pink-7"
           ><div class="row justify-center" style="width: 100%">Q</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('R')" color="purple-7"
+        <q-btn push class="q-btn" @click="comprobar('R')" color="pink-7"
           ><div class="row justify-center" style="width: 100%">R</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('S')" color="purple-6"
+        <q-btn push class="q-btn" @click="comprobar('S')" color="pink-6"
           ><div class="row justify-center" style="width: 100%">S</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('T')" color="purple-6"
+        <q-btn push class="q-btn" @click="comprobar('T')" color="pink-6"
           ><div class="row justify-center" style="width: 100%">T</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('U')" color="purple-6"
+        <q-btn push class="q-btn" @click="comprobar('U')" color="pink-6"
           ><div class="row justify-center" style="width: 100%">U</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('V')" color="purple-8"
+        <q-btn push class="q-btn" @click="comprobar('V')" color="pink-8"
           ><div class="row justify-center" style="width: 100%">V</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('W')" color="purple-8"
+        <q-btn push class="q-btn" @click="comprobar('W')" color="pink-8"
           ><div class="row justify-center" style="width: 100%">W</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('X')" color="purple-8"
+        <q-btn push class="q-btn" @click="comprobar('X')" color="pink-8"
           ><div class="row justify-center" style="width: 100%">X</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('Y')" color="purple-9"
+        <q-btn push class="q-btn" @click="comprobar('Y')" color="pink-9"
           ><div class="row justify-center" style="width: 100%">Y</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('Z')" color="purple-9"
+        <q-btn push class="q-btn" @click="comprobar('Z')" color="pink-9"
           ><div class="row justify-center" style="width: 100%">Z</div></q-btn
         >
       </div>
+    </div>
+
+    <div class="row" style="margin-top: 1rem">
+      <q-btn
+        style="width: 100%; border-radius: 0.5rem"
+        icon="repeat"
+        class="bg-blue text-white"
+        label="Repeat"
+        @click="repeat"
+      >
+      </q-btn>
     </div>
 
     <div style="margin-top: 2.5rem; margin-bottom: 1rem">
@@ -156,14 +176,22 @@
           "
         >
           <p
-            style="background-color: rgb(0,0,0, 0.3); padding: 0.5rem; border-radius: 0.5rem"
+            style="
+              background-color: rgb(0, 0, 0, 0.3);
+              padding: 0.5rem;
+              border-radius: 0.5rem;
+            "
           >
             Good
           </p>
 
           <p
             class="text-grey-4 text-justify"
-            style="background-color: rgb(0,0,0, 0.3); padding: 0.5rem; border-radius: 0.5rem"
+            style="
+              background-color: rgb(0, 0, 0, 0.3);
+              padding: 0.5rem;
+              border-radius: 0.5rem;
+            "
           >
             Si obtienes un verde es que vas muy bien :)
           </p>
@@ -178,19 +206,35 @@
           "
         >
           <p
-            style="background-color: rgb(0,0,0, 0.3); padding: 0.5rem; border-radius: 0.5rem"
+            style="
+              background-color: rgb(0, 0, 0, 0.3);
+              padding: 0.5rem;
+              border-radius: 0.5rem;
+            "
           >
             Wrong
           </p>
           <p
             class="text-grey-4 text-justify"
-            style="background-color: rgb(0,0,0, 0.3); padding: 0.5rem; border-radius: 0.5rem"
+            style="
+              background-color: rgb(0, 0, 0, 0.3);
+              padding: 0.5rem;
+              border-radius: 0.5rem;
+            "
           >
             Si obtienes un rojo es que deberías de estudiar más el Abecedario
           </p>
         </div>
       </div>
     </div>
+    <q-btn
+      push
+      style="height: 40px; width: 100%; margin-top: 1rem"
+      label="CLOSE"
+      color="red-10"
+      v-close-popup
+      ><p style="font-size: 0.5rem; margin-left: 0.5rem">(Cerrar)</p></q-btn
+    >
   </div>
 </template>
 
@@ -198,7 +242,6 @@
 export default {
   data() {
     return {
-      
       text: "",
       ph: "",
 
@@ -229,61 +272,64 @@ export default {
         { letra: 22, ruta: "w" },
         { letra: 23, ruta: "x" },
         { letra: 24, ruta: "y" },
-        { letra: 25, ruta: "z" }
+        { letra: 25, ruta: "z" },
       ],
 
-      currentObject: {}
+      currentObject: {},
     };
   },
 
   methods: {
-    play(sound) {
+    crearAudio(sound) {
       console.log(sound.ruta, sound.letra);
-      var letra = document.getElementById(sound.ruta);
-      letra.play();
+      var number = document.getElementById(sound.ruta);
+      number.play();
     },
 
     cargarAudiosAleatorio() {
-      let letra = Math.floor(Math.random() * (26 - 0) + 0);
-
-      this.arregloAudios.map(x => {
-        if (x.letra == letra) {
-          this.play(x);
+      console.log("Entro a los audios aleatorios");
+      let number = Math.floor(Math.random() * (26 - 0) + 0);
+      this.arregloAudios.map((x) => {
+        if (x.letra == number) {
+          this.crearAudio(x);
           this.currentObject = { ...x };
         }
       });
     },
 
-    async comprobar(LETRA) {
+    async comprobar(text) {
       try {
-       
-        console.log("Numero dicho de voz", this.currentObject.letra);
+        console.log("Hoola");
+        console.log("Numero del input", text);
+        console.log("Numero de comprobar", this.currentObject.ruta);
 
-        if (this.text === this.currentObject.letra.toString()) {
-          var letra = document.getElementById("correct");
-          await letra.play();
+        if (text.toLowerCase() === this.currentObject.ruta.toLowerCase()) {
+          var number = document.getElementById("correct");
+          await number.play();
           this.$q.notify({
             type: "positive",
-            message: `Vas muy bien !!`
+            message: `Vas muy bien !!`,
           });
 
-          this.text = "";
+          text = "";
         } else {
-          var letra = document.getElementById("incorrect");
-          await letra.play();
+          var number = document.getElementById("incorrect");
+          await number.play();
 
           this.$q.notify({
             type: "negative",
-            message: `Try Again!!`
+            message: `Try Again!!`,
           });
         }
       } catch (error) {}
     },
 
     repeat() {
-      this.play(this.currentObject);
-    }
-  }
+      try {
+        this.crearAudio(this.currentObject);
+      } catch (error) {}
+    },
+  },
 };
 
 //etiquetaAudio.play();

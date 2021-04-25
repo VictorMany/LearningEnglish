@@ -1,7 +1,8 @@
 <template>
   <div class="bg-dark" style="width: 100%">
     <q-img
-      :ratio="8 / 16"
+      basic
+      :ratio="6 / 16"
       class="img-class"
       style="min-width: 313px"
       src="img/fondo.jpg"
@@ -23,6 +24,7 @@
                 <h6>Numbers</h6>
                 <p>(Números)</p>
                 <q-img
+                  basic
                   src="img/numbers.png"
                   style="width: 50%; height: 50%; margin-top: -0.6rem"
                 />
@@ -36,12 +38,12 @@
                 <h6>Colors</h6>
                 <p>(Colores)</p>
                 <q-img
+                  basic
                   src="img/colors.png"
                   style="width: 80%; height: 80%; margin-top: -1.5rem"
                 />
               </div>
             </div>
-
             <div
               class="div-menu inset-shadow-down bg-blue-14"
               @click="alphabet = true"
@@ -50,12 +52,12 @@
                 <h6>Alphabet</h6>
                 <p>(Abecedario)</p>
                 <q-img
+                  basic
                   src="img/alphabet.png"
                   style="width: 80%; height: 80%; margin-top: -0.7rem"
                 />
               </div>
             </div>
-
             <div
               class="div-menu inset-shadow-down bg-orange-14"
               @click="pronouns = true"
@@ -63,22 +65,15 @@
               <div class="column items-center">
                 <h6>Pronouns</h6>
                 <p>(Pronombres personales)</p>
-                <q-img src="img/pronouns.png" style="width: 60%; height: 60%" />
+                <q-img
+                  basic
+                  src="img/pronouns.png"
+                  style="width: 60%; height: 60%"
+                />
               </div>
             </div>
           </div>
           <div class="col-6" style="padding: 1rem">
-            <div
-              class="div-menu inset-shadow-down bg-purple-14"
-              @click="fruits = true"
-            >
-              <div class="column items-center">
-                <h6>Fruits</h6>
-                <p>(Frutas)</p>
-                <q-img src="img/apple.png" style="width: 50%; height: 50%" />
-              </div>
-            </div>
-
             <div
               class="div-menu inset-shadow-down bg-blue"
               @click="basic_phrases = true"
@@ -86,9 +81,24 @@
               <div class="column items-center">
                 <h6>Phrases</h6>
                 <p>(Frases)</p>
-                <q-img src="img/hi.png" style="width: 60%; height: 60%" />
+                <q-img basic src="img/hi.png" style="width: 60%; height: 60%" />
               </div>
             </div>
+            <div
+              class="div-menu inset-shadow-down bg-purple-14"
+              @click="fruits = true"
+            >
+              <div class="column items-center">
+                <h6>Fruits</h6>
+                <p>(Frutas)</p>
+                <q-img
+                  basic
+                  src="img/apple.png"
+                  style="width: 50%; height: 50%"
+                />
+              </div>
+            </div>
+
             <div
               class="div-menu inset-shadow-down bg-green-14"
               @click="actions = true"
@@ -97,6 +107,7 @@
                 <h6>Verbs</h6>
                 <p>(Verbos)</p>
                 <q-img
+                  basic
                   src="img/verbs.png"
                   style="width: 60%; height: 60%; margin-top: -0.6rem"
                 />
@@ -110,6 +121,7 @@
                 <h6>Body parts</h6>
                 <p>(Partes del cuerpo)</p>
                 <q-img
+                  basic
                   src="img/body.png"
                   style="width: 60%; height: 60%; margin-top: -1rem"
                 />
@@ -126,15 +138,17 @@
       transition-hide="rotate"
     >
       <q-card
-        style="width: 100%; background-color: rgb(10, 10, 10, 0.8); overflow: scroll"
+        style="
+          width: 100%;
+          background-color: rgb(10, 10, 10, 0.8);
+          overflow: scroll;
+        "
       >
         <q-card-section
           class="bg-blue-10 text-white"
-          style="border-radius: 0.5rem; margin: 1rem;"
+          style="border-radius: 0.5rem; margin: 1rem"
         >
-          <div class="text-h6">
-            Numbers
-          </div>
+          <div class="text-h6">Numbers</div>
 
           <p style="font-size: 1rem; color: grey">(Números)</p>
         </q-card-section>
@@ -163,10 +177,14 @@
       transition-hide="rotate"
     >
       <q-card
-        style="width: 100%; background-color: rgb(10, 10, 10, 0.8); overflow: scroll"
+        style="
+          width: 100%;
+          background-color: rgb(10, 10, 10, 0.8);
+          overflow: scroll;
+        "
       >
         <q-card-section class="q-pt-none">
-          <alphabet-component/>
+          <alphabet-component />
         </q-card-section>
 
         <q-card-actions>
@@ -212,7 +230,7 @@
         <q-card-actions>
           <q-btn
             push
-            style="width: 100%; height: 100%; margin-top: 4rem"
+            style="width: 100%; height: 100%; width: 100%"
             label="CLOSE"
             color="red-10"
             v-close-popup
@@ -261,14 +279,13 @@
       transition-show="rotate"
       transition-hide="rotate"
     >
-      <q-card style="width: 100%">
-        <q-card-section
-          class="bg-blue-10 text-white"
-          style="border-radius: 0.5rem; margin: 1rem"
-        >
-          <div class="text-h6">Basic Phrases</div>
-          <p style="font-size: 1rem; color: grey">(Frases Básicas)</p>
-        </q-card-section>
+      <q-card
+        style="
+          width: 100%;
+          background-color: rgb(10, 10, 10, 0.8);
+          overflow: scroll;
+        "
+      >
         <q-card-section class="q-pt-none">
           <basic-phrases-component />
         </q-card-section>
@@ -325,31 +342,7 @@
       transition-show="rotate"
       transition-hide="rotate"
     >
-      <q-card style="width: 100%">
-        <q-card-section
-          class="bg-blue-10 text-white"
-          style="border-radius: 0.5rem; margin: 1rem"
-        >
-          <div class="text-h6">Verbs</div>
-          <p style="font-size: 1rem; color: grey">(Verbos)</p>
-        </q-card-section>
-        <q-card-section class="q-pt-none">
-          <actions-and-verbs-component />
-        </q-card-section>
-
-        <q-card-actions>
-          <q-btn
-            push
-            style="width: 100%; height: 100%; width: 100%; margin-top: 4rem"
-            label="CLOSE"
-            color="red-10"
-            v-close-popup
-            ><p style="font-size: 0.5rem; margin-left: 0.5rem">
-              (Cerrar)
-            </p></q-btn
-          >
-        </q-card-actions>
-      </q-card>
+      <pronouns-component />
     </q-dialog>
   </div>
 </template>
@@ -364,6 +357,7 @@ import BodyPartsComponent from "./bodyComponent/BodyPartsComponent.vue";
 import NumbersComponent from "./numbersComponent/NumbersComponent.vue";
 import ColorsComponentQuestions from "./colorsComponent/ColorsComponentQuestions.vue";
 import ColorsComponent from "./colorsComponent/ColorsComponent.vue";
+import PronounsComponent from "./pronounsComponent/PronounsComponent.vue";
 
 export default defineComponent({
   components: {
@@ -374,18 +368,19 @@ export default defineComponent({
     BasicPhrasesComponent,
     ActionsAndVerbsComponent,
     ColorsComponentQuestions,
-    ColorsComponent
+    ColorsComponent,
+    PronounsComponent,
   },
   name: "CompositionComponent",
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
     },
 
     active: {
-      type: Boolean
-    }
+      type: Boolean,
+    },
   },
   data() {
     return {
@@ -403,19 +398,19 @@ export default defineComponent({
         borderRadius: "1px",
         backgroundColor: "#027be3",
         width: "2px",
-        opacity: 0.75
+        opacity: 0.75,
       },
       barStyle: {
         right: "-6px",
         borderRadius: "9px",
         backgroundColor: "#027be3",
         width: "2px",
-        opacity: 0.2
-      }
+        opacity: 0.2,
+      },
     };
   },
 
-  methods: {}
+  methods: {},
 });
 </script>
 

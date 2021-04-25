@@ -39,7 +39,7 @@
     >
       <q-list>
         <q-item-label header class="text-grey-8" style="font-weight: bold">
-           QUESTIONS AREA
+          QUESTIONS AREA
           <p
             style="
               margin-top: 0.5rem;
@@ -84,18 +84,18 @@ const linksData = [
     questionDialog: "colors",
   },
   {
-    title: "Body parts",
-    caption: "Partes del cuerpo",
-    icon: "public",
-    color: "yellow-10",
-    questionDialog: "body",
-  },
-  {
     title: "Alphabet",
     caption: "Abecedario",
     icon: "favorite",
     color: "blue-14",
     questionDialog: "alphabet",
+  },
+  {
+    title: "Pronouns",
+    caption: "Pronombres",
+    icon: "favorite",
+    color: "orange-10",
+    questionDialog: "pronouns",
   },
   {
     title: "Phrases",
@@ -105,19 +105,20 @@ const linksData = [
     questionDialog: "phrases",
   },
   {
+    title: "Body parts",
+    caption: "Partes del cuerpo",
+    icon: "public",
+    color: "yellow-10",
+    questionDialog: "body",
+  },
+  {
     title: "Verbs",
     caption: "Verbos",
     icon: "favorite",
     color: "green-14",
     questionDialog: "verbs",
   },
-  {
-    title: "Pronouns",
-    caption: "Pronombres",
-    icon: "favorite",
-    color: "orange-10",
-    questionDialog: "pronouns",
-  },
+
   {
     title: "Fruits",
     caption: "Frutas",

@@ -13,7 +13,7 @@
     <audio id="Pink"><source src="Colores/Pink.mp3" /></audio>
     <audio id="White"><source src="Colores/White.mp3" /></audio>
 
-    <q-img
+    <q-img 
       style="width: 250px; height: 250px; border-radius: 50%"
       :src="imagen"
       basic
