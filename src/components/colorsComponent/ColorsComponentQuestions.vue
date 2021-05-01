@@ -42,7 +42,7 @@
       >
         <div class="row justify-center" style="width: 100%">CLICK ME !!</div>
         <p class="row justify-center text-white" style="font-size: 0.6rem">
-          Presioname
+          Presióname
         </p>
       </q-btn>
     </div>

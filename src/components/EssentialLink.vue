@@ -58,6 +58,22 @@
     >
       <basic-phrases-component-questions></basic-phrases-component-questions>
     </q-dialog>
+
+    <q-dialog
+      v-model="fruits"
+      transition-show="rotate"
+      transition-hide="rotate"
+    >
+      <fruits-component-questions></fruits-component-questions>
+    </q-dialog>
+
+    <q-dialog
+      v-model="actions"
+      transition-show="rotate"
+      transition-hide="rotate"
+    >
+      <basic-verbs-component-questions></basic-verbs-component-questions>
+    </q-dialog>
   </div>
 </template>
 
@@ -68,6 +84,8 @@ import ColorsComponentQuestions from "./colorsComponent/ColorsComponentQuestions
 import AlphabetComponentQuestions from "./alphabetComponent/AlphabetComponentQuestions";
 import PronounsComponentQuestions from "./pronounsComponent/PronounsComponentQuestions";
 import BasicPhrasesComponentQuestions from "./phrasesComponent/BasicPhrasesComponentQuestions.vue";
+import FruitsComponentQuestions from "./fruitsComponent/FruitsComponentQuestions";
+import BasicVerbsComponentQuestions from "./verbsComponent/BasicVerbsComponentQuestions";
 
 export default defineComponent({
   name: "EssentialLink",
@@ -77,6 +95,8 @@ export default defineComponent({
     AlphabetComponentQuestions,
     PronounsComponentQuestions,
     BasicPhrasesComponentQuestions,
+    FruitsComponentQuestions,
+    BasicVerbsComponentQuestions,
   },
   props: {
     title: {
@@ -112,6 +132,8 @@ export default defineComponent({
       alphabet: false,
       pronouns: false,
       phrases: false,
+      fruits: false,
+      actions: false,
     };
   },
   methods: {
@@ -132,6 +154,12 @@ export default defineComponent({
           break;
         case "phrases":
           this.phrases = true;
+          break;
+        case "fruits":
+          this.fruits = true;
+          break;
+        case "actions":
+          this.actions = true;
           break;
       }
     },

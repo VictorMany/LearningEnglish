@@ -116,7 +116,7 @@ const linksData = [
     caption: "Verbos",
     icon: "favorite",
     color: "green-14",
-    questionDialog: "verbs",
+    questionDialog: "actions",
   },
 
   {

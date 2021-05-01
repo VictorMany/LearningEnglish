@@ -85,7 +85,7 @@
               </div>
             </div>
             <div
-              class="div-menu inset-shadow-down bg-purple-14"
+              class="div-menu inset-shadow-down bg-blue"
               @click="fruits = true"
             >
               <div class="column items-center">
@@ -94,11 +94,10 @@
                 <q-img
                   basic
                   src="img/apple.png"
-                  style="width: 50%; height: 50%"
+                  style="width: 60%; height: 60%"
                 />
               </div>
             </div>
-
             <div
               class="div-menu inset-shadow-down bg-green-14"
               @click="actions = true"
@@ -131,7 +130,7 @@
         </div>
       </q-scroll-area>
     </q-img>
-
+    <!--Numeros-->
     <q-dialog
       v-model="numbers"
       transition-show="rotate"
@@ -170,7 +169,7 @@
         </q-card-actions>
       </q-card>
     </q-dialog>
-
+    <!--Abecedario-->
     <q-dialog
       v-model="alphabet"
       transition-show="rotate"
@@ -201,7 +200,7 @@
         </q-card-actions>
       </q-card>
     </q-dialog>
-
+    <!--Colores-->
     <q-dialog
       v-model="colors"
       transition-show="rotate"
@@ -209,7 +208,7 @@
     >
       <colors-component></colors-component>
     </q-dialog>
-
+    <!--Partes del cuerpo-->
     <q-dialog
       v-model="body_parts"
       transition-show="rotate"
@@ -241,39 +240,15 @@
         </q-card-actions>
       </q-card>
     </q-dialog>
-
+    <!--Frutas-->
     <q-dialog
       v-model="fruits"
       transition-show="rotate"
       transition-hide="rotate"
     >
-      <q-card style="width: 100%">
-        <q-card-section
-          class="bg-blue-10 text-white"
-          style="border-radius: 0.5rem; margin: 1rem"
-        >
-          <div class="text-h6">Fruits</div>
-          <p style="font-size: 1rem; color: grey">(Frutas)</p>
-        </q-card-section>
-        <q-card-section class="q-pt-none">
-          <fruits-component />
-        </q-card-section>
-
-        <q-card-actions>
-          <q-btn
-            push
-            style="width: 100%; height: 100%; width: 100%; margin-top: 4rem"
-            label="CLOSE"
-            color="red-10"
-            v-close-popup
-            ><p style="font-size: 0.5rem; margin-left: 0.5rem">
-              (Cerrar)
-            </p></q-btn
-          >
-        </q-card-actions>
-      </q-card>
+      <fruits-component />
     </q-dialog>
-
+    <!--Frases básicas-->
     <q-dialog
       v-model="basic_phrases"
       transition-show="rotate"
@@ -304,22 +279,21 @@
         </q-card-actions>
       </q-card>
     </q-dialog>
-
+    <!--Acciones y verbos-->
     <q-dialog
       v-model="actions"
       transition-show="rotate"
       transition-hide="rotate"
     >
-      <q-card style="width: 100%">
-        <q-card-section
-          class="bg-blue-10 text-white"
-          style="border-radius: 0.5rem; margin: 1rem"
-        >
-          <div class="text-h6">Verbs</div>
-          <p style="font-size: 1rem; color: grey">(Verbos)</p>
-        </q-card-section>
+      <q-card
+        style="
+          width: 100%;
+          background-color: rgb(10, 10, 10, 0.8);
+          overflow: scroll;
+        "
+      >
         <q-card-section class="q-pt-none">
-          <actions-and-verbs-component />
+          <basic-verbs-component />
         </q-card-section>
 
         <q-card-actions>
@@ -358,6 +332,7 @@ import NumbersComponent from "./numbersComponent/NumbersComponent.vue";
 import ColorsComponentQuestions from "./colorsComponent/ColorsComponentQuestions.vue";
 import ColorsComponent from "./colorsComponent/ColorsComponent.vue";
 import PronounsComponent from "./pronounsComponent/PronounsComponent.vue";
+import BasicVerbsComponent from "./verbsComponent/BasicVerbsComponent.vue";
 
 export default defineComponent({
   components: {
@@ -370,6 +345,7 @@ export default defineComponent({
     ColorsComponentQuestions,
     ColorsComponent,
     PronounsComponent,
+    BasicVerbsComponent,
   },
   name: "CompositionComponent",
   props: {

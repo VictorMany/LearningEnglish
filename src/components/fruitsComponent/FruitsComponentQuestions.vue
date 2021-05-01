@@ -8,6 +8,12 @@
       overflow: scroll;
     "
   >
+    <div>
+      <audio id="correct"><source src="numbers/sounds/correct.mp3" /></audio>
+      <audio id="incorrect">
+        <source src="numbers/sounds/incorrect.mp3" />
+      </audio>
+    </div>
     <h4
       style="
         margin-top: -0.3rem;
@@ -20,36 +26,44 @@
       "
       class="bg-blue-13 text-white text-center"
     >
-      Fruit
+      Fruit Questions
     </h4>
-    <div class="row justify-around" style="margin-bottom: 1rem">
-      <audio id="red"><source src="colors/red.mp3" /></audio>
-      <audio id="blue"><source src="colors/blue.mp3" /></audio>
-      <audio id="yellow"><source src="colors/yellow.mp3" /></audio>
-      <audio id="green"><source src="colors/green.mp3" /></audio>
-      <audio id="orange"><source src="colors/orange.mp3" /></audio>
-      <audio id="purple"><source src="colors/purple.mp3" /></audio>
-      <audio id="grey"><source src="colors/grey.mp3" /></audio>
-      <audio id="pink"><source src="colors/pink.mp3" /></audio>
-      <audio id="white"><source src="colors/white.mp3" /></audio>
-      <audio id="correct"><source src="numbers/sounds/correct.mp3" /></audio>
-      <audio id="incorrect">
-        <source src="numbers/sounds/incorrect.mp3" />
-      </audio>
-    </div>
+
+    <q-btn
+      style="width: 100%; height: auto; margin-top: 1rem"
+      push
+      class="q-btn"
+      @click="cargarAudiosColorsAleatorio"
+      color="light-blue-13"
+      icon="campaign"
+    >
+      <div class="row justify-center" style="width: 100%">CLICK ME !!</div>
+      <p class="row justify-center text-white" style="font-size: 0.6rem">
+        Presióname
+      </p>
+    </q-btn>
 
     <div class="row q-col-gutter-xs">
-      <div class="col-6" v-for="n in arrayImagesColors" :key="n.id">
-        <div style="padding: 0.3rem">
+      <div class="col-6" v-for="n in arrayFruit" :key="n.id">
+        <div style="padding: 0.3rem" @click="comprobar(n.id)">
           <card-fruits
             :imagen="n.imagen"
             :color="n.color"
             :audio="n.id"
-            :textoEspaniol="n.textoEspaniol"
-            :textoIngles="n.textoIngles"
           ></card-fruits>
         </div>
       </div>
+    </div>
+
+     <div class="row" style="margin-top: 1rem">
+      <q-btn
+        style="width: 100%; border-radius: 0.5rem"
+        icon="repeat"
+        class="bg-blue text-white"
+        label="Repeat"
+        @click="repeat"
+      >
+      </q-btn>
     </div>
 
     <q-btn
@@ -71,7 +85,7 @@ export default {
     this.imagen = "img/colors_grey.png";
     this.color = "grey-13";
     this.textoEspaniol = "";
-    this.audio = 1;
+    this.audio = 0;
     this.textoIngles = "";
   },
   data() {
@@ -96,8 +110,7 @@ export default {
       Apple,
       Orange
       */
-      
-      arrayImagesColors: [
+      arrayFruit: [
         {
           id: 1,
           imagen: "img/fruits/aguacate.png",
@@ -232,8 +245,66 @@ export default {
       textoEspaniol: "",
       textoIngles: "",
       audio: "",
+
       dense: false,
     };
+  },
+
+  methods: {
+    crearAudio(sound) {
+      var number = document.getElementById(sound);
+      number.play();
+      console.log(sound);
+      this.arrayFruit.map((item) => {
+        if (item.audio === sound) {
+          console.log(item);
+          this.color = item.color;
+          this.imagen = item.imagen;
+          this.textoIngles = item.textoIngles;
+          this.textoEspaniol = item.textoEspaniol;
+          this.audio = item.audio;
+        }
+      });
+    },
+
+    cargarAudiosColorsAleatorio() {
+      let number = Math.floor(Math.random() * (16 - 0) + 0);
+      this.arrayFruit.map((x) => {
+        if (x.id == number) {
+          this.crearAudio(x.id);
+          this.currentObject = { ...x };
+        }
+      });
+    },
+
+    async comprobar(text) {
+      try {
+        if (text === this.currentObject.id) {
+          var number = document.getElementById("correct");
+          await number.play();
+          this.$q.notify({
+            type: "positive",
+            message: `Vas muy bien !!`,
+          });
+
+          text = "";
+        } else {
+          var number = document.getElementById("incorrect");
+          await number.play();
+
+          this.$q.notify({
+            type: "negative",
+            message: `Try Again!!`,
+          });
+        }
+      } catch (error) {}
+    },
+
+    repeat() {
+      try {
+        this.crearAudio(this.currentObject.id);
+      } catch (error) {}
+    },
   },
 };
 
