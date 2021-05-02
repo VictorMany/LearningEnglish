@@ -323,7 +323,6 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-import ActionsAndVerbsComponent from "./actionsComponent/ActionsAndVerbsComponent.vue";
 import AlphabetComponent from "./alphabetComponent/AlphabetComponent.vue";
 import FruitsComponent from "./fruitsComponent/FruitsComponent.vue";
 import BasicPhrasesComponent from "./phrasesComponent/BasicPhrasesComponent.vue";
@@ -341,7 +340,6 @@ export default defineComponent({
     AlphabetComponent,
     BodyPartsComponent,
     BasicPhrasesComponent,
-    ActionsAndVerbsComponent,
     ColorsComponentQuestions,
     ColorsComponent,
     PronounsComponent,
@@ -368,7 +366,6 @@ export default defineComponent({
       basic_phrases: false,
       pronouns: false,
       colors: false,
-
       thumbStyle: {
         right: "-6px",
         borderRadius: "1px",
@@ -395,18 +392,17 @@ export default defineComponent({
   width: 100%
   height: 150px
   color: white
-
   padding: 1rem
   margin-bottom: 1rem
   border-radius: 1rem
 
-  p
-    margin-top: -3rem
-    color: light-grey
-    font-weight: bold
+p
+  margin-top: -3rem
+  color: light-grey
+  font-weight: bold
 
-  h6
-    margin-top: -0.2rem
+h6
+  margin-top: -0.2rem
 
 .qScrollStyle
   height: calc(100%)

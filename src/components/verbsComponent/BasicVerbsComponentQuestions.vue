@@ -260,7 +260,7 @@ export default {
         { numero: 47, phrase: "To get", trad: "Obtener" },
         { numero: 48, phrase: "To run", trad: "Correr" },
         { numero: 49, phrase: "To come", trad: "Venir" },
-        { numero: 50, phrase: "To go", trad: "Ir" },
+        { numero: 50, phrase: "To do", trad: "Hacer" },
       ],
       currentObject: {},
     };
