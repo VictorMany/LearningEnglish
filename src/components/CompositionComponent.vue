@@ -214,31 +214,7 @@
       transition-show="rotate"
       transition-hide="rotate"
     >
-      <q-card style="width: 100%">
-        <q-card-section
-          class="bg-blue-10 text-white"
-          style="border-radius: 0.5rem; margin: 1rem"
-        >
-          <div class="text-h6">Body Parts</div>
-          <p style="font-size: 1rem; color: grey">(Partes del cuerpo)</p>
-        </q-card-section>
-        <q-card-section class="q-pt-none">
-          <body-parts-component />
-        </q-card-section>
-
-        <q-card-actions>
-          <q-btn
-            push
-            style="width: 100%; height: 100%; width: 100%"
-            label="CLOSE"
-            color="red-10"
-            v-close-popup
-            ><p style="font-size: 0.5rem; margin-left: 0.5rem">
-              (Cerrar)
-            </p></q-btn
-          >
-        </q-card-actions>
-      </q-card>
+      <body-parts-component />
     </q-dialog>
     <!--Frutas-->
     <q-dialog

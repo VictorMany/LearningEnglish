@@ -74,6 +74,10 @@
     >
       <basic-verbs-component-questions></basic-verbs-component-questions>
     </q-dialog>
+
+    <q-dialog v-model="parts" transition-show="rotate" transition-hide="rotate">
+      <body-parts-component-questions></body-parts-component-questions>
+    </q-dialog>
   </div>
 </template>
 
@@ -86,6 +90,7 @@ import PronounsComponentQuestions from "./pronounsComponent/PronounsComponentQue
 import BasicPhrasesComponentQuestions from "./phrasesComponent/BasicPhrasesComponentQuestions.vue";
 import FruitsComponentQuestions from "./fruitsComponent/FruitsComponentQuestions";
 import BasicVerbsComponentQuestions from "./verbsComponent/BasicVerbsComponentQuestions";
+import BodyPartsComponentQuestions from "./bodyComponent/BodyPartsComponentQuestions";
 
 export default defineComponent({
   name: "EssentialLink",
@@ -97,6 +102,7 @@ export default defineComponent({
     BasicPhrasesComponentQuestions,
     FruitsComponentQuestions,
     BasicVerbsComponentQuestions,
+    BodyPartsComponentQuestions,
   },
   props: {
     title: {
@@ -134,6 +140,7 @@ export default defineComponent({
       phrases: false,
       fruits: false,
       actions: false,
+      parts: false
     };
   },
   methods: {
@@ -160,6 +167,9 @@ export default defineComponent({
           break;
         case "actions":
           this.actions = true;
+          break;
+        case "body":
+          this.parts = true;
           break;
       }
     },

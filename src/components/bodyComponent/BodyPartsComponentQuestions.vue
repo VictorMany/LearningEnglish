@@ -8,10 +8,16 @@
       overflow: scroll;
     "
   >
+    <div>
+      <audio id="correct"><source src="numbers/sounds/correct.mp3" /></audio>
+      <audio id="incorrect">
+        <source src="numbers/sounds/incorrect.mp3" />
+      </audio>
+    </div>
     <h4
       style="
         margin-top: -0.3rem;
-        margin-bottom: 1rem;
+        margin-bottom: -0.3rem;
         width: 100%;
         padding: 0.4rem;
         border-radius: 0.5rem;
@@ -20,22 +26,44 @@
       "
       class="bg-blue-13 text-white text-center"
     >
-      Body parts
+      BodyPart Questions
     </h4>
-   
+
+    <q-btn
+      style="width: 100%; height: auto; margin-top: 1rem"
+      push
+      class="q-btn"
+      @click="cargarAudiosColorsAleatorio"
+      color="light-blue-13"
+      icon="campaign"
+    >
+      <div class="row justify-center" style="width: 100%">CLICK ME !!</div>
+      <p class="row justify-center text-white" style="font-size: 0.6rem">
+        Presióname
+      </p>
+    </q-btn>
 
     <div class="row q-col-gutter-xs">
       <div class="col-6" v-for="n in arrayBodyPart" :key="n.id">
-        <div style="padding: 0.3rem">
+        <div style="padding: 0.3rem" @click="comprobar(n.id)">
           <card-parts
             :imagen="n.imagen"
             :color="n.color"
             :audio="n.id"
-            :textoEspaniol="n.textoEspaniol"
-            :textoIngles="n.textoIngles"
           ></card-parts>
         </div>
       </div>
+    </div>
+
+    <div class="row" style="margin-top: 1rem">
+      <q-btn
+        style="width: 100%; border-radius: 0.5rem"
+        icon="repeat"
+        class="bg-blue text-white"
+        label="Repeat"
+        @click="repeat"
+      >
+      </q-btn>
     </div>
 
     <q-btn
@@ -57,7 +85,7 @@ export default {
     this.imagen = "img/colors_grey.png";
     this.color = "grey-13";
     this.textoEspaniol = "";
-    this.audio = 1;
+    this.audio = 0;
     this.textoIngles = "";
   },
   data() {
@@ -68,21 +96,6 @@ export default {
       numbers_thousands: false,
       text: "",
       ph: "",
-
-      /*Avocado, Blueberry, Raspberry,
-      Strawberry, Lemon, Tangerine,
-      Mango,
-      Melon,
-      Papaya,
-      Cucumber,
-      Pineapple,
-      Banana,
-      Watermelon,
-      Grape,
-      Apple,
-      Orange
-      */
-
       arrayBodyPart: [
         {
           id: 1,
@@ -170,8 +183,66 @@ export default {
       textoEspaniol: "",
       textoIngles: "",
       audio: "",
+
       dense: false,
     };
+  },
+
+  methods: {
+    crearAudio(sound) {
+      var number = document.getElementById(sound);
+      number.play();
+      console.log(sound);
+      this.arrayBodyPart.map((item) => {
+        if (item.audio === sound) {
+          console.log(item);
+          this.color = item.color;
+          this.imagen = item.imagen;
+          this.textoIngles = item.textoIngles;
+          this.textoEspaniol = item.textoEspaniol;
+          this.audio = item.audio;
+        }
+      });
+    },
+
+    cargarAudiosColorsAleatorio() {
+      let number = Math.floor(Math.random() * (11 - 0) + 0);
+      this.arrayBodyPart.map((x) => {
+        if (x.id == number) {
+          this.crearAudio(x.id);
+          this.currentObject = { ...x };
+        }
+      });
+    },
+
+    async comprobar(text) {
+      try {
+        if (text === this.currentObject.id) {
+          var number = document.getElementById("correct");
+          await number.play();
+          this.$q.notify({
+            type: "positive",
+            message: `Vas muy bien !!`,
+          });
+
+          text = "";
+        } else {
+          var number = document.getElementById("incorrect");
+          await number.play();
+
+          this.$q.notify({
+            type: "negative",
+            message: `Try Again!!`,
+          });
+        }
+      } catch (error) {}
+    },
+
+    repeat() {
+      try {
+        this.crearAudio(this.currentObject.id);
+      } catch (error) {}
+    },
   },
 };
 
