@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated style="height: 80px">
-      <q-toolbar>
+      <q-toolbar class="glossy bg-indigo-10">
         <q-btn
           style="width: 100px"
           flat
@@ -19,10 +19,10 @@
             style="
               font-size: 0.8rem;
               margin-bottom: -0.1rem;
-              color: #027;
+              
               font-weight: bold;
             "
-            class="row"
+            class="row text-grey"
           >
             (Aprendiendo inglés)
           </p>
@@ -72,49 +72,49 @@ const linksData = [
   {
     title: "Numbers",
     caption: "Numeros",
-    icon: "record_voice_over",
+    icon: "pin",
     color: "red",
     questionDialog: "numbers",
   },
   {
     title: "Colors",
     caption: "colors",
-    icon: "rss_feed",
+    icon: "palette",
     color: "cyan",
     questionDialog: "colors",
   },
   {
     title: "Alphabet",
     caption: "Abecedario",
-    icon: "favorite",
+    icon: "sort_by_alpha",
     color: "blue-14",
     questionDialog: "alphabet",
   },
   {
     title: "Pronouns",
     caption: "Pronombres",
-    icon: "favorite",
+    icon: "groups",
     color: "orange-10",
     questionDialog: "pronouns",
   },
   {
     title: "Phrases",
     caption: "Frases",
-    icon: "favorite",
+    icon: "translate",
     color: "blue",
     questionDialog: "phrases",
   },
   {
     title: "Body parts",
     caption: "Partes del cuerpo",
-    icon: "public",
+    icon: "directions_run",
     color: "yellow-10",
     questionDialog: "body",
   },
   {
     title: "Verbs",
     caption: "Verbos",
-    icon: "favorite",
+    icon: "pedal_bike",
     color: "green-14",
     questionDialog: "actions",
   },
@@ -122,7 +122,7 @@ const linksData = [
   {
     title: "Fruits",
     caption: "Frutas",
-    icon: "favorite",
+    icon: "icecream",
     color: "purple",
     questionDialog: "fruits",
   },

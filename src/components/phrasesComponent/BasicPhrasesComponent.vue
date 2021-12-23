@@ -38,8 +38,12 @@
     </div>
 
     <div>
-      <div class="row justify-around" style="overflow: scroll">
+      <div data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000" class="row justify-around" style="overflow: scroll">
         <q-btn
+         
+          
           push
           no-caps
           class="q-btn"
@@ -63,7 +67,10 @@
 </template>
 
 <script>
+
+
 export default {
+ 
   data() {
     return {
       arrayPhrases: [

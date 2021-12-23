@@ -22,12 +22,12 @@
     >
       Body parts
     </h4>
-   
 
     <div class="row q-col-gutter-xs">
       <div class="col-6" v-for="n in arrayBodyPart" :key="n.id">
         <div style="padding: 0.3rem">
           <card-parts
+            class="btn-card"
             :imagen="n.imagen"
             :color="n.color"
             :audio="n.id"
@@ -40,7 +40,7 @@
 
     <q-btn
       push
-      style="height: 40px; width: 100%; margin-top: 1rem"
+      style="height: 38px; width: 100%; margin-top: 1rem; padding-top: 0rem"
       label="CLOSE"
       color="red-10"
       v-close-popup
@@ -198,6 +198,11 @@ export default {
 
 h6
   margin-top: -0.5rem
+
+.btn-card:hover
+  transform: scale(1.05)
+  transition: .2s
+  z-index: 1000
 
 .qScrollStyle
   height: 100%

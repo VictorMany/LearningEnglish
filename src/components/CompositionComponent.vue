@@ -1,135 +1,140 @@
 <template>
-  <div class="bg-dark" style="width: 100%">
-    <q-img
-      basic
-      :ratio="6 / 16"
-      class="img-class"
-      style="min-width: 313px"
-      src="img/fondo.jpg"
-      height="100%"
-    >
-      <q-scroll-area
-        :thumb-style="thumbStyle"
-        :bar-style="barStyle"
-        class="qScrollStyle"
+  <div class="bg-indigo-3" style="width: 100%; height: 100%">
+    <div class="row justify-evenly" style="width: 100%; height; 100%; margin-top: 1rem">
+      <div
+        class="div-menu col-4 col-md-4 col-lg-4 bg-white"
+        @click="numbers = true"
+        style="overflow: hidden"
       >
-        <div class="row" style="width: 100%; height; 100%;">
-          <div class="col-6" style="padding: 1rem">
-            <div
-              class="div-menu bg-red-14"
-              @click="numbers = true"
-              style="overflow: hidden"
-            >
-              <div class="column items-center">
-                <h6>Numbers</h6>
-                <p>(Números)</p>
-                <q-img
-                  basic
-                  src="img/numbers.png"
-                  style="width: 50%; height: 50%; margin-top: -0.6rem"
-                />
-              </div>
-            </div>
-            <div
-              class="div-menu inset-shadow-down bg-cyan-14"
-              @click="colors = true"
-            >
-              <div class="column items-center">
-                <h6>Colors</h6>
-                <p>(Colores)</p>
-                <q-img
-                  basic
-                  src="img/colors.png"
-                  style="width: 80%; height: 80%; margin-top: -1.5rem"
-                />
-              </div>
-            </div>
-            <div
-              class="div-menu inset-shadow-down bg-blue-14"
-              @click="alphabet = true"
-            >
-              <div class="column items-center">
-                <h6>Alphabet</h6>
-                <p>(Abecedario)</p>
-                <q-img
-                  basic
-                  src="img/alphabet.png"
-                  style="width: 80%; height: 80%; margin-top: -0.7rem"
-                />
-              </div>
-            </div>
-            <div
-              class="div-menu inset-shadow-down bg-orange-14"
-              @click="pronouns = true"
-            >
-              <div class="column items-center">
-                <h6>Pronouns</h6>
-                <p>(Pronombres personales)</p>
-                <q-img
-                  basic
-                  src="img/pronouns.png"
-                  style="width: 60%; height: 60%"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="col-6" style="padding: 1rem">
-            <div
-              class="div-menu inset-shadow-down bg-blue"
-              @click="basic_phrases = true"
-            >
-              <div class="column items-center">
-                <h6>Phrases</h6>
-                <p>(Frases)</p>
-                <q-img basic src="img/hi.png" style="width: 60%; height: 60%" />
-              </div>
-            </div>
-            <div
-              class="div-menu inset-shadow-down bg-blue"
-              @click="fruits = true"
-            >
-              <div class="column items-center">
-                <h6>Fruits</h6>
-                <p>(Frutas)</p>
-                <q-img
-                  basic
-                  src="img/apple.png"
-                  style="width: 60%; height: 60%"
-                />
-              </div>
-            </div>
-            <div
-              class="div-menu inset-shadow-down bg-green-14"
-              @click="actions = true"
-            >
-              <div class="column items-center">
-                <h6>Verbs</h6>
-                <p>(Verbos)</p>
-                <q-img
-                  basic
-                  src="img/verbs.png"
-                  style="width: 60%; height: 60%; margin-top: -0.6rem"
-                />
-              </div>
-            </div>
-            <div
-              class="div-menu inset-shadow-down bg-amber-14"
-              @click="body_parts = true"
-            >
-              <div class="column items-center">
-                <h6>Body parts</h6>
-                <p>(Partes del cuerpo)</p>
-                <q-img
-                  basic
-                  src="img/body.png"
-                  style="width: 60%; height: 60%; margin-top: -1rem"
-                />
-              </div>
-            </div>
-          </div>
+        <div class="column items-center text-red-14">
+          <h6>Numbers</h6>
+          <p>(Números)</p>
+          <q-img
+            basic
+            src="img/numbers.gif"
+            style="width: 70%; height: 70%; margin-top: -1rem"
+          />
         </div>
-      </q-scroll-area>
-    </q-img>
+      </div>
+      <div
+        class="div-menu col-6 col-md-4 col-lg-4 inset-shadow bg-white"
+        @click="colors = true"
+      >
+        <div class="column items-center text-cyan-14">
+          <h6>Colors</h6>
+          <p>(Colores)</p>
+          <q-img
+            basic
+            src="img/colors.gif"
+            style="width: 65%; height: 60%; margin-top: -1rem"
+          />
+        </div>
+      </div>
+      <div
+        class="div-menu col-6 col-md-4 col-lg-4 inset-shadow bg-white"
+        @click="alphabet = true"
+      >
+        <div class="column items-center text-cyan-14">
+          <h6>Alphabet</h6>
+          <p>(Abecedario)</p>
+          <q-img
+            basic
+            src="img/abc.gif"
+            style="width: 70%; height: 70%; margin-top: -1rem"
+          />
+        </div>
+      </div>
+      <div
+        class="
+          div-menu
+          col-6 col-md-4 col-lg-4
+          inset-shadow
+          bg-white
+          text-orange-14
+        "
+        @click="pronouns = true"
+      >
+        <div class="column items-center">
+          <h6>Pronouns</h6>
+          <p>(Pronombres)</p>
+          <q-img
+            basic
+            src="img/pronouns.gif"
+            style="width: 70%; height: 70%; margin-top: -1rem"
+          />
+        </div>
+      </div>
+
+      <div
+        class="div-menu col-6 col-md-4 col-lg-4 inset-shadow bg-white text-blue"
+        @click="basic_phrases = true"
+      >
+        <div class="column items-center">
+          <h6>Phrases</h6>
+          <p>(Frases)</p>
+          <q-img
+            basic
+            src="img/phrases.gif"
+            style="width: 70%; height: 70%; margin-top: -1rem"
+          />
+        </div>
+      </div>
+      <div
+        class="div-menu col-6 col-md-4 col-lg-4 inset-shadow bg-white text-blue"
+        @click="fruits = true"
+      >
+        <div class="column items-center">
+          <h6>Fruits</h6>
+          <p>(Frutas)</p>
+          <q-img
+            basic
+            src="img/apple.gif"
+            style="width: 70%; height: 70%; margin-top: -1rem"
+          />
+        </div>
+      </div>
+      <div
+        class="
+          div-menu
+          col-6 col-md-4 col-lg-4
+          inset-shadow
+          bg-white
+          text-green-14
+        "
+        @click="actions = true"
+      >
+        <div class="column items-center">
+          <h6>Verbs</h6>
+          <p>(Verbos)</p>
+          <q-img
+            basic
+            src="img/verbs.gif"
+            style="width: 70%; height: 70%; margin-top: -1rem"
+          />
+        </div>
+      </div>
+      <div
+        class="
+          div-menu
+          col-6 col-md-4 col-lg-4
+          inset-shadow
+          bg-white
+          text-amber-14
+        "
+        @click="body_parts = true"
+      >
+        <div class="column items-center">
+          <h6>Body parts</h6>
+          <p>(Partes del cuerpo)</p>
+          <q-img
+            basic
+            src="img/body.gif"
+            style="width: 70%; height: 70%; margin-top: -1rem"
+          />
+        </div>
+      </div>
+    </div>
+
     <!--Numeros-->
     <q-dialog
       v-model="numbers"
@@ -365,9 +370,7 @@ export default defineComponent({
 
 <style scoped lang="sass">
 .div-menu
-  width: 100%
-  height: 150px
-  color: white
+  width: 45%
   padding: 1rem
   margin-bottom: 1rem
   border-radius: 1rem

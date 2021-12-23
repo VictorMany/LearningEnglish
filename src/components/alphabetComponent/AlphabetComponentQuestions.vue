@@ -60,7 +60,7 @@
           margin-bottom: 1rem;
         "
         push
-        class="q-btn"
+        
         @click="cargarAudiosAleatorio()"
         color="light-blue-13"
         icon="campaign"
@@ -72,82 +72,82 @@
       </q-btn>
 
       <div class="row justify-around">
-        <q-btn push class="q-btn" @click="comprobar('A')" color="pink-9"
+        <q-btn push class="q-btn-1" @click="comprobar('A')" color="pink-9"
           ><div class="row justify-center" style="width: 100%">A</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('B')" color="pink-9"
+        <q-btn push class="q-btn-1" @click="comprobar('B')" color="pink-9"
           ><div class="row justify-center" style="width: 100%">B</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('C')" color="pink-9"
+        <q-btn push class="q-btn-1" @click="comprobar('C')" color="pink-9"
           ><div class="row justify-center" style="width: 100%">C</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('D')" color="pink-9"
+        <q-btn push class="q-btn-1" @click="comprobar('D')" color="pink-9"
           ><div class="row justify-center" style="width: 100%">D</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('E')" color="pink-9"
+        <q-btn push class="q-btn-1" @click="comprobar('E')" color="pink-9"
           ><div class="row justify-center" style="width: 100%">E</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('F')" color="pink-9"
+        <q-btn push class="q-btn-1" @click="comprobar('F')" color="pink-9"
           ><div class="row justify-center" style="width: 100%">F</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('G')" color="pink-8"
+        <q-btn push class="q-btn-1" @click="comprobar('G')" color="pink-8"
           ><div class="row justify-center" style="width: 100%">G</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('H')" color="pink-8"
+        <q-btn push class="q-btn-1" @click="comprobar('H')" color="pink-8"
           ><div class="row justify-center" style="width: 100%">H</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('I')" color="pink-8"
+        <q-btn push class="q-btn-1" @click="comprobar('I')" color="pink-8"
           ><div class="row justify-center" style="width: 100%">I</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('J')" color="pink-8"
+        <q-btn push class="q-btn-1" @click="comprobar('J')" color="pink-8"
           ><div class="row justify-center" style="width: 100%">J</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('K')" color="pink-8"
+        <q-btn push class="q-btn-1" @click="comprobar('K')" color="pink-8"
           ><div class="row justify-center" style="width: 100%">K</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('L')" color="pink-8"
+        <q-btn push class="q-btn-1" @click="comprobar('L')" color="pink-8"
           ><div class="row justify-center" style="width: 100%">L</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('M')" color="pink-7"
+        <q-btn push class="q-btn-1" @click="comprobar('M')" color="pink-7"
           ><div class="row justify-center" style="width: 100%">M</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('N')" color="pink-7"
+        <q-btn push class="q-btn-1" @click="comprobar('N')" color="pink-7"
           ><div class="row justify-center" style="width: 100%">N</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('O')" color="pink-7"
+        <q-btn push class="q-btn-1" @click="comprobar('O')" color="pink-7"
           ><div class="row justify-center" style="width: 100%">O</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('P')" color="pink-7"
+        <q-btn push class="q-btn-1" @click="comprobar('P')" color="pink-7"
           ><div class="row justify-center" style="width: 100%">P</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('Q')" color="pink-7"
+        <q-btn push class="q-btn-1" @click="comprobar('Q')" color="pink-7"
           ><div class="row justify-center" style="width: 100%">Q</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('R')" color="pink-7"
+        <q-btn push class="q-btn-1" @click="comprobar('R')" color="pink-7"
           ><div class="row justify-center" style="width: 100%">R</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('S')" color="pink-6"
+        <q-btn push class="q-btn-1" @click="comprobar('S')" color="pink-6"
           ><div class="row justify-center" style="width: 100%">S</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('T')" color="pink-6"
+        <q-btn push class="q-btn-1" @click="comprobar('T')" color="pink-6"
           ><div class="row justify-center" style="width: 100%">T</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('U')" color="pink-6"
+        <q-btn push class="q-btn-1" @click="comprobar('U')" color="pink-6"
           ><div class="row justify-center" style="width: 100%">U</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('V')" color="pink-8"
+        <q-btn push class="q-btn-1" @click="comprobar('V')" color="pink-8"
           ><div class="row justify-center" style="width: 100%">V</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('W')" color="pink-8"
+        <q-btn push class="q-btn-1" @click="comprobar('W')" color="pink-8"
           ><div class="row justify-center" style="width: 100%">W</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('X')" color="pink-8"
+        <q-btn push class="q-btn-1" @click="comprobar('X')" color="pink-8"
           ><div class="row justify-center" style="width: 100%">X</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('Y')" color="pink-9"
+        <q-btn push class="q-btn-1" @click="comprobar('Y')" color="pink-9"
           ><div class="row justify-center" style="width: 100%">Y</div></q-btn
         >
-        <q-btn push class="q-btn" @click="comprobar('Z')" color="pink-9"
+        <q-btn push class="q-btn-1" @click="comprobar('Z')" color="pink-9"
           ><div class="row justify-center" style="width: 100%">Z</div></q-btn
         >
       </div>
@@ -341,17 +341,16 @@ export default {
   padding: 0.3rem
   margin: 0.2rem
 
-.q-btn
+.q-btn-1
   width: 30%
   height: 70px
   margin-bottom: 0.5rem
   padding-top: 0.3rem
 
-.q-btn_mitad
-  width: 45%
-  height: 70px
-  margin-bottom: 0.5rem
-  padding-top: 0.3rem
+.q-btn-1:hover
+  transform: scale(1.1)
+  transition: .2s
+  z-index: 1000
 
 h6
   margin-top: -0.5rem

@@ -28,6 +28,7 @@
       class="row justify-center"
     >
       <div
+        v-if="textoEspaniol"
         class="fixed-bottom column justify-center"
         style="margin-bottom: -0.6rem"
       >
