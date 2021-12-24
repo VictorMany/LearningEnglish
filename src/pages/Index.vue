@@ -1,5 +1,5 @@
 <template>
-  <q-page style="background-color: #1575A1;"  class="row items-center justify-center">
+  <q-page  class="row items-center justify-center bg-indigo-3">
     <example-component
       title="Example component"
       active
