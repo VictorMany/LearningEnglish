@@ -1,5 +1,5 @@
 <template>
-  <q-page class="row items-center justify-evenly">
+  <q-page  class="row items-center justify-center bg-indigo-3">
     <example-component
       title="Example component"
       active
@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import ExampleComponent from "components/CompositionComponent.vue";
-import { defineComponent, ref } from "@vue/composition-api";
+import { defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
   name: "PageIndex",

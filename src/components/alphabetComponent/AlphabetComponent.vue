@@ -15,7 +15,7 @@
       Alphabet
     </h4>
     <div>
-      <audio id="a"><source src="abc/a.mp3" /></audio>
+      <audio id="a"><source src="numbers/sounds/a.mp3" /></audio>
       <audio id="b"><source src="abc/b.mp3" /></audio>
       <audio id="c"><source src="abc/c.mp3" /></audio>
       <audio id="d"><source src="abc/d.mp3" /></audio>
@@ -143,18 +143,21 @@ export default {
     return {};
   },
 
+ 
+
   methods: {
-    crearAudio(sound) {
+    async crearAudio(sound) {
       try {
         sound = sound.toLowerCase();
         console.log(sound);
         var audio = document.getElementById(sound);
-        audio.play();
+        console.log(audio)
+        await audio.play();
       } catch (error) {
         console.log(error);
       }
     },
-  },
+  }
 };
 
 //etiquetaAudio.play();
@@ -172,6 +175,11 @@ export default {
   margin-bottom: 0.5rem
   padding-top: 0.3rem
   font-size: 1.3rem
+
+.q-btn:hover
+  transform: scale(1.1)
+  transition: .2s
+  z-index: 1000
 
 .q-btn_mitad
   width: 47%

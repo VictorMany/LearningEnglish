@@ -47,6 +47,7 @@
       <div class="col-6" v-for="n in arrayBodyPart" :key="n.id">
         <div style="padding: 0.3rem" @click="comprobar(n.id)">
           <card-parts
+            class="body-card"
             :imagen="n.imagen"
             :color="n.color"
             :audio="n.id"
@@ -66,9 +67,72 @@
       </q-btn>
     </div>
 
+    <div style="margin-top: 2.5rem; margin-bottom: 1rem">
+      <div class="row justify-around text-white">
+        <div
+          class="bg-green-14 col text-center"
+          style="
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            margin: 0 0.5rem 0 0.5rem;
+          "
+        >
+          <p
+            style="
+              background-color: rgb(0, 0, 0, 0.3);
+              padding: 0.5rem;
+              border-radius: 0.5rem;
+            "
+          >
+            Good
+          </p>
+          <p
+            class="text-grey-4 text-justify"
+            style="
+              background-color: rgb(0, 0, 0, 0.3);
+              padding: 0.5rem;
+              border-radius: 0.5rem;
+            "
+          >
+            Si obtienes un verde es que vas muy bien :)
+          </p>
+        </div>
+        <div
+          class="bg-red-13 col text-center"
+          style="
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            margin: 0 0.5rem 0 0.5rem;
+          "
+        >
+          <p
+            style="
+              background-color: rgb(0, 0, 0, 0.3);
+              padding: 0.5rem;
+              border-radius: 0.5rem;
+            "
+          >
+            Wrong
+          </p>
+          <p
+            class="text-grey-4 text-justify"
+            style="
+              background-color: rgb(0, 0, 0, 0.3);
+              padding: 0.5rem;
+              border-radius: 0.5rem;
+            "
+          >
+            Si obtienes un rojo es que deberías de estudiar más las partes del
+            cuerpo
+          </p>
+        </div>
+      </div>
+    </div>
     <q-btn
       push
-      style="height: 40px; width: 100%; margin-top: 1rem"
+      style="height: 38px; width: 100%; margin-top: 1rem; padding-top: 0rem"
       label="CLOSE"
       color="red-10"
       v-close-popup
@@ -250,22 +314,17 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.button
-  color: $blue
-  padding: 0.3rem
-  margin: 0.2rem
-
 .q-btn
   width: 30%
   height: 70px
   margin-bottom: 0.5rem
   padding-top: 0.3rem
 
-.q-btn_mitad
-  width: 45%
-  height: 70px
-  margin-bottom: 0.5rem
-  padding-top: 0.3rem
+
+.body-card:hover
+  transform: scale(1.05)
+  transition: .2s
+  z-index: 1000
 
 h6
   margin-top: -0.5rem

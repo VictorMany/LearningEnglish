@@ -323,15 +323,14 @@ export default {
 
 .q-btn
   width: 30%
-  height: 70px
+  height: 70px 
   margin-bottom: 0.5rem
   padding-top: 0.3rem
 
-.q-btn_mitad
-  width: 45%
-  height: 70px
-  margin-bottom: 0.5rem
-  padding-top: 0.3rem
+div.row>div:hover
+  transform: scale(1.1)
+  transition: .2s
+  z-index: 1000
 
 h6
   margin-top: -0.5rem

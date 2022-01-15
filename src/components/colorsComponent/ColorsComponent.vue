@@ -142,6 +142,7 @@
       class="row justify-center"
     >
       <card-img-color
+        class="color-card"
         :imagen="imagen"
         :color="color"
         :audio="audio"
@@ -288,10 +289,15 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.button
-  color: $blue
-  padding: 0.3rem
-  margin: 0.2rem
+.color-card:hover
+  transform: scale(1.1)
+  transition: .2s
+  z-index: 1000
+
+div.row>div:hover
+  transform: scale(1.1)
+  transition: .2s
+  z-index: 1000
 
 .q-btn
   width: 30%

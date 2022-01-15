@@ -55,7 +55,7 @@
       </div>
     </div>
 
-     <div class="row" style="margin-top: 1rem">
+    <div class="row" style="margin-top: 1rem">
       <q-btn
         style="width: 100%; border-radius: 0.5rem"
         icon="repeat"
@@ -66,6 +66,68 @@
       </q-btn>
     </div>
 
+    <div style="margin-top: 2.5rem; margin-bottom: 1rem">
+      <div class="row justify-around text-white">
+        <div
+          class="bg-green-14 col text-center"
+          style="
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            margin: 0 0.5rem 0 0.5rem;
+          "
+        >
+          <p
+            style="
+              background-color: rgb(0, 0, 0, 0.3);
+              padding: 0.5rem;
+              border-radius: 0.5rem;
+            "
+          >
+            Good
+          </p>
+          <p
+            class="text-grey-4 text-justify"
+            style="
+              background-color: rgb(0, 0, 0, 0.3);
+              padding: 0.5rem;
+              border-radius: 0.5rem;
+            "
+          >
+            Si obtienes un verde es que vas muy bien :)
+          </p>
+        </div>
+        <div
+          class="bg-red-13 col text-center"
+          style="
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            margin: 0 0.5rem 0 0.5rem;
+          "
+        >
+          <p
+            style="
+              background-color: rgb(0, 0, 0, 0.3);
+              padding: 0.5rem;
+              border-radius: 0.5rem;
+            "
+          >
+            Wrong
+          </p>
+          <p
+            class="text-grey-4 text-justify"
+            style="
+              background-color: rgb(0, 0, 0, 0.3);
+              padding: 0.5rem;
+              border-radius: 0.5rem;
+            "
+          >
+            Si obtienes un rojo es que deberías de estudiar más las frutas
+          </p>
+        </div>
+      </div>
+    </div>
     <q-btn
       push
       style="height: 40px; width: 100%; margin-top: 1rem"
